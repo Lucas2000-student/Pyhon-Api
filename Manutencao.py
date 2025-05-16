@@ -7,7 +7,6 @@ class ManutencaoCreate(BaseModel):
     nome: str
     email: str 
     senha: str
-    preferencias: str
 
 # Modelo de saída (com ID)
 class Manutencao(ManutencaoCreate):
