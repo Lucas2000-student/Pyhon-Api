@@ -92,7 +92,6 @@ def listar_manutencao():
             "nome": row[1],
             "email": row[2],
             "senha": row[3],
-            "preferencias": row[4]
         }
         for row in rows
     ]
@@ -119,7 +118,6 @@ def obter_manutencao(manutencao_id_usuario: int):
             "nome": row[1],
             "email": row[2],
             "senha": row[3],
-            "preferencias": row[4]
         }
     raise HTTPException(status_code=404, detail="Usuário não encontrado.")
 
@@ -132,7 +130,7 @@ def atualizar_manutencao(manutencao_id_usuario: int, manutencao_atualizada: Manu
 
     cursor = conn.cursor()
 
-    cursor.execute("UPDATE T_HFLL_USUARIO SET NOME=:valor2, EMAIL=:valor3, SENHA=:valor4, PREFERENCIAS=:valor5 WHERE ID_USUARIO=:valor1", valor1=manutencao_id_usuario, valor2=manutencao_atualizada.nome, valor3=manutencao_atualizada.email, valor4=manutencao_atualizada.senha, valor5=manutencao_atualizada.preferencias)
+    cursor.execute("UPDATE T_HFLL_USUARIO SET NOME=:valor2, EMAIL=:valor3, SENHA=:valor4 WHERE ID_USUARIO=:valor1", valor1=manutencao_id_usuario, valor2=manutencao_atualizada.nome, valor3=manutencao_atualizada.email, valor4=manutencao_atualizada.senha)
     conn.commit()
 
 
