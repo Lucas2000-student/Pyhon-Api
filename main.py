@@ -53,7 +53,7 @@ def criar_manutencao(manutencao: ManutencaoCreate):
     cursor = conn.cursor()
 
 
-    cursor.execute("INSERT INTO T_HFLL_USUARIO (ID_USUARIO, NOME, EMAIL, SENHA, PREFERENCIAS) VALUES (:valor1, :valor2, :valor3, :valor4, :valor5)", valor1=nova_manutencao.id_usuario, valor2=nova_manutencao.nome, valor3=nova_manutencao.email, valor4=nova_manutencao.senha, valor5=nova_manutencao.preferencias)
+    cursor.execute("INSERT INTO T_HFLL_USUARIO (ID_USUARIO, NOME, EMAIL, SENHA) VALUES (:valor1, :valor2, :valor3, :valor4)", valor1=nova_manutencao.id_usuario, valor2=nova_manutencao.nome, valor3=nova_manutencao.email, valor4=nova_manutencao.senha)
     conn.commit()
 
 
